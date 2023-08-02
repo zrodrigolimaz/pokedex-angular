@@ -3,3 +3,43 @@
 body {
     background-color: #F8F8F8;
 }
+
+main {
+    max-width: 600px; /* limita a largura máxima a 600px */
+    width: 100%; /* faz com que o main preencha toda a largura disponível, até o máximo de 600px */
+    margin: 0 auto; /* centraliza o elemento na página */
+    box-sizing: border-box; /* garante que padding e border sejam incluídos no tamanho total do elemento */
+}
+
+input {
+    width: 90%;
+    background: none;
+    border: none;
+    height: 50px;
+    flex-shrink: 0;
+    outline: none;
+}
+
+input::placeholder {
+    color: #262835;
+    font-family: 'Mandali', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
+    
+input::-webkit-input-placeholder {
+    color: #262835;
+    font-family: 'Mandali', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
+    
+input::-moz-placeholder {
+    color: #262835;
+    font-family: 'Mandali', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
