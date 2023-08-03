@@ -1,37 +1,49 @@
 <headerbar />
 
-<main>
-    <p class="h2">Bubasauro</p>
-
-    <figure class="figure">
-        <img src="" class="figure-img img-fluid rounded" alt="...">
-        <figcaption class="figure-caption">Propriedade principal Grass</figcaption>
-    </figure>
-
-    <ul class="list-group custom-details">
+<main class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="display-2">Principais Caracteristicas</h1>
+        <button type="button" class="btn btn-primary" data-toggle="button"  [routerLink]="['/']" aria-pressed="false">
+            Voltar
+        </button>
+    </div>
+    <div class="d-flex mt-4 mb-2" *ngIf="pokemon && pokemon.length > 0">
+        <figure class="figure">
+            <img [src]="pokemon[0].sprites.other.dream_world.front_default" class="figure-img img-fluid rounded"
+                [alt]="pokemon[0].name">
+                <figcaption class="figure-caption ml-4 mt-2">Principal: {{pokemon[0].types[0].type.name}} </figcaption>
+        </figure>
+        <div class="d-flex flex-column ml-3">
+            <h2 class="h1 ml-4 mt-4">{{ pokemon[0].name }}</h2>
+            <p class="h4 ml-4 mt-2">Este Pokémon possui habilidades impressionantes <br> e uma base de experiência de 
+                <span class="text-primary">{{pokemon[0].base_experience}}</span> pontos.
+            </p>
+        </div>
+    </div>  
+    <ul class="list-group custom-details" *ngIf="pokemon && pokemon.length > 0">
         <li class="list-group-item d-flex justify-content-between align-items-center">
             Ataque
-          <span class="badge badge-primary badge-pill">14</span>
+            <span class="badge badge-primary badge-pill">{{ pokemon[0].stats[1].base_stat }}</span>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
             Defesa
-          <span class="badge badge-primary badge-pill">2</span>
+            <span class="badge badge-primary badge-pill">{{ pokemon[0].stats[2].base_stat }}</span>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
             Vida
-          <span class="badge badge-primary badge-pill">1</span>
+            <span class="badge badge-primary badge-pill">{{ pokemon[0].stats[0].base_stat }}</span>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
             Principal Habilidade
-            <span class="badge badge-primary badge-pill">14</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span class="badge badge-primary badge-pill">{{ pokemon[0].abilities[0].ability.name }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
             Peso
-            <span class="badge badge-primary badge-pill">69</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span class="badge badge-primary badge-pill">{{ pokemon[0].weight/10 }} KG</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
             Altura
-            <span class="badge badge-primary badge-pill">0.7 Metros</span>
-          </li>
-      </ul>
+            <span class="badge badge-primary badge-pill">{{ pokemon[0].height/10 }} Metros</span>
+        </li>
+    </ul>
 </main>
