@@ -40,13 +40,13 @@ export class PokeapiService {
   get apiListAllPokemons(): Observable<PokemonList> {
     return this.http.get<PokemonList>(this.url).pipe(
       tap(res => {
-        console.log('Resultado da API List All Pokemons:', res);
+        // console.log('Resultado da API List All Pokemons:', res);
       }),
       tap( res => {
         res.results.map( (resPokemons: Pokemon) => {
           this.apiGetPokemon(resPokemons.url).subscribe(
             details => {
-              console.log(`Detalhes do Pokémon ${resPokemons.name}:`, details);
+              // console.log(`Detalhes do Pokémon ${resPokemons.name}:`, details);
               resPokemons.details = details 
             }
           );

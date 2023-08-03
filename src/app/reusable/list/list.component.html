@@ -3,14 +3,14 @@
 </div>
 
 <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons" >
-  <div class="card custom-card mb-3" style="max-width: 540px;" *ngIf="pokemon.details">
+  <div [routerLink]="['details',pokemon.details.id ]" class="card custom-card mb-3" style="max-width: 540px;" *ngIf="pokemon.details">
     <div class="row no-gutters">
       <div class="col-md-4 d-flex justify-content-center align-items-center">
         <img [src]="pokemon.details?.sprites?.other?.dream_world?.front_default" class="card-img-top" [alt]="pokemon.name">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">{{ pokemon.name }} {{ pokemon.details.id }} </h5>
+          <h5 class="card-title">{{ pokemon.name }}</h5>
           <p class="card-text">Comentários</p>
           <p class="card-text" *ngFor="let type of pokemon.details?.types">
             <span 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { HeaderbarComponent } from './headerbar/headerbar.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -18,7 +19,8 @@ import { ListComponent } from './list/list.component';
     ListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class ReusableModule { }
