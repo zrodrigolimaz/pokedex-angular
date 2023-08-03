@@ -8,15 +8,28 @@ import { PokeapiService } from 'src/app/services/pokeapi.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit, OnDestroy {
+
+  private setAllPokemons: any;
+  public getAllPokemons: any;
+  public apiError: boolean = false;
+  public errorMessage: string = '';
+
   serviceSubscription = new Subscription
   constructor(private pokeapiService: PokeapiService) { }
 
   ngOnInit(): void {
-    // Coloque aqui o código que você quer que seja executado quando o componente for inicializado
-    this.serviceSubscription = this.pokeapiService.apiListAllPokemons.subscribe(
-      res => res
-    );
+    this.serviceSubscription = this.pokeapiService.apiListAllPokemons.subscribe({
+      next: res => {
+        this.setAllPokemons = res.results;
+        this.getAllPokemons = this.setAllPokemons;
+      },
+      error: error => {
+        this.apiError = true;
+        this.errorMessage = error.message;
+      }
+    });
   }
+
   ngOnDestroy(): void {
     this.serviceSubscription.unsubscribe();
   }

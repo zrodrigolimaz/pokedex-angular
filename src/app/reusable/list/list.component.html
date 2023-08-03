@@ -1,16 +1,36 @@
-<div class="card custom-card mb-3" style="max-width: 540px;">
+<div *ngIf="apiError">
+  <p>Oops! Parece que estamos enfrentando um erro na API: {{ errorMessage }} Volte mais tarde!</p>
+</div>
+
+<ng-template ngFor let-pokemon [ngForOf]="getAllPokemons" >
+  <div class="card custom-card mb-3" style="max-width: 540px;" *ngIf="pokemon.details">
     <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="../../../assets/pokemon-example.png" class="card-img-top" alt="Imagem do pokemon">
-    </div>
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
+        <img [src]="pokemon.details?.sprites?.other?.dream_world?.front_default" class="card-img-top" [alt]="pokemon.name">
+      </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">Bulbasaur</h5>
+          <h5 class="card-title">{{ pokemon.name }} {{ pokemon.details.id }} </h5>
           <p class="card-text">Comentários</p>
-          <p class="card-text"><small class="text-muted">Grass</small></p>
-          <p class="card-text"><small class="text-muted">Poison</small></p>
+          <p class="card-text" *ngFor="let type of pokemon.details?.types">
+            <span 
+                class="type-tag" 
+                [class.poison]="type.type.name === 'poison'"
+                [class.fire]="type.type.name === 'fire'"
+                [class.fairy]="type.type.name === 'fairy'"
+                [class.ground]="type.type.name === 'ground'"
+                [class.electric]="type.type.name === 'electric'"
+                [class.normal]="type.type.name === 'normal'"
+                [class.flying]="type.type.name === 'flying'"
+                [class.grass]="type.type.name === 'grass'"
+                [class.bug]="type.type.name === 'bug'"
+                [class.water]="type.type.name === 'water'"
+                [class.fighting]="type.type.name === 'fighting'">
+                <small>{{ type.type.name }}</small>
+            </span>
+        </p>
         </div>
       </div>
     </div>
   </div>
-  
+</ng-template> 
