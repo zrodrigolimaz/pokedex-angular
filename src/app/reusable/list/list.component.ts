@@ -33,4 +33,11 @@ export class ListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.serviceSubscription.unsubscribe();
   }
+
+  public getSearch (value: string) {
+    const filter = this.setAllPokemons.filter( (res: any) => {
+      return !res.name.indexOf(value.toLowerCase());
+    })
+    this.getAllPokemons = filter;
+  }
 }

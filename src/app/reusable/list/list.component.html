@@ -2,6 +2,8 @@
   <p>Oops! Parece que estamos enfrentando um erro na API: {{ errorMessage }} Volte mais tarde!</p>
 </div>
 
+<searchbar (emmitSearch)="getSearch($event)"/>
+
 <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons" >
   <div [routerLink]="['details',pokemon.details.id ]" class="card custom-card mb-3" style="max-width: 540px;" *ngIf="pokemon.details">
     <div class="row no-gutters">
