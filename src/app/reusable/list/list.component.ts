@@ -1,6 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PokeapiService } from 'src/app/services/pokeapi.service';
+import { FavoritesService } from 'src/app/services/favorites.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'list',
@@ -15,7 +18,11 @@ export class ListComponent implements OnInit, OnDestroy {
   public errorMessage: string = '';
 
   serviceSubscription = new Subscription
-  constructor(private pokeapiService: PokeapiService) { }
+  constructor(
+    private pokeapiService: PokeapiService,
+    public favoritesService: FavoritesService, // tornando público para usar no template
+    private router: Router  // injetar o Router aqui
+  ) { }
 
   ngOnInit(): void {
     this.serviceSubscription = this.pokeapiService.apiListAllPokemons.subscribe({
@@ -40,4 +47,10 @@ export class ListComponent implements OnInit, OnDestroy {
     })
     this.getAllPokemons = filter;
   }
+
+  navigateToDetails(event: Event, id: number) {
+    event.stopPropagation();
+    this.router.navigate(['details', id]);
+  }
 }
+
