@@ -6,6 +6,8 @@ import { HeaderbarComponent } from './headerbar/headerbar.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { ListComponent } from './list/list.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { ListComponent } from './list/list.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class ReusableModule { }

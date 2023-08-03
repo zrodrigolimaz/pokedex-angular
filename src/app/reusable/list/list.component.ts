@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 import { PokeapiService } from 'src/app/services/pokeapi.service';
 import { FavoritesService } from 'src/app/services/favorites.service';
 import { Router } from '@angular/router';
-
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'list',
@@ -16,19 +16,29 @@ export class ListComponent implements OnInit, OnDestroy {
   public getAllPokemons: any;
   public apiError: boolean = false;
   public errorMessage: string = '';
+  public commentForm: FormGroup;
 
   serviceSubscription = new Subscription
   constructor(
     private pokeapiService: PokeapiService,
     public favoritesService: FavoritesService, // tornando público para usar no template
-    private router: Router  // injetar o Router aqui
-  ) { }
+    private router: Router,  // injetar o Router aqui
+    private fb: FormBuilder
+  ) { 
+    this.commentForm = this.fb.group({
+      newComment: ['']
+    });
+  }
 
   ngOnInit(): void {
     this.serviceSubscription = this.pokeapiService.apiListAllPokemons.subscribe({
       next: res => {
         this.setAllPokemons = res.results;
-        this.getAllPokemons = this.setAllPokemons;
+        this.getAllPokemons = this.setAllPokemons.map((pokemon: any) => {
+          let storedComments = localStorage.getItem(pokemon.name);
+          pokemon.comments = storedComments ? JSON.parse(storedComments) : [];
+          return pokemon;
+        });
       },
       error: error => {
         this.apiError = true;
@@ -52,5 +62,23 @@ export class ListComponent implements OnInit, OnDestroy {
     event.stopPropagation();
     this.router.navigate(['details', id]);
   }
-}
 
+  addComment(pokemon:any) {
+    if(this.commentForm.valid) {
+      let comment = this.commentForm.value.newComment;
+      let storedComments = JSON.parse(localStorage.getItem(pokemon.name) || '[]');
+      storedComments.push(comment);
+      localStorage.setItem(pokemon.name, JSON.stringify(storedComments));
+      pokemon.comments = storedComments;
+      this.commentForm.reset();
+    }
+  }
+
+  deleteComment(pokemon: any, commentIndex: number) {
+    let storedComments = JSON.parse(localStorage.getItem(pokemon.name) || '[]');
+    storedComments.splice(commentIndex, 1);
+    localStorage.setItem(pokemon.name, JSON.stringify(storedComments));
+    pokemon.comments = storedComments;
+  }
+  
+}

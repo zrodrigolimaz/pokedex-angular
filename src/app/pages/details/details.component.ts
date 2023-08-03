@@ -39,7 +39,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
     this.subscription = forkJoin([pokemon, name]).subscribe(
       res => {
-        console.log(res);
+        // console.log(res);
         this.pokemon = res;
       }
     );
