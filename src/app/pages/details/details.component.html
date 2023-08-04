@@ -3,7 +3,7 @@
 <main class="container">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1 class="display-2">Principais Caracteristicas</h1>
-        <button type="button" class="btn btn-primary" data-toggle="button"  [routerLink]="['/']" aria-pressed="false">
+        <button type="button" class="btn btn-primary" data-toggle="button" [routerLink]="['/']" aria-pressed="false">
             Voltar
         </button>
     </div>
@@ -11,15 +11,15 @@
         <figure class="figure">
             <img [src]="pokemon[0].sprites.other.dream_world.front_default" class="figure-img img-fluid rounded"
                 [alt]="pokemon[0].name">
-                <figcaption class="figure-caption ml-4 mt-2"> {{pokemon[0].types[0].type.name}} </figcaption>
         </figure>
         <div class="d-flex flex-column ml-3">
             <h2 class="h1 ml-4 mt-4">{{ pokemon[0].name }}</h2>
-            <p class="h4 ml-4 mt-2">Este Pokémon possui habilidades impressionantes <br> e uma base de experiência de 
+            <p class="figure-caption ml-4"> {{pokemon[0].types[0].type.name}} </p>
+            <p class="h4 ml-4 mt-2">Este Pokémon possui habilidades impressionantes <br> e uma base de experiência de
                 <span class="text-primary">{{pokemon[0].base_experience}}</span> pontos.
             </p>
         </div>
-    </div>  
+    </div>
     <ul class="list-group custom-details" *ngIf="pokemon && pokemon.length > 0">
         <li class="list-group-item d-flex justify-content-between align-items-center">
             Ataque
