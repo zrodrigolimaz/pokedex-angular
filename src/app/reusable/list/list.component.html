@@ -2,10 +2,10 @@
     <p>Oops! Parece que estamos enfrentando um erro na API: {{ errorMessage }} Volte mais tarde!</p>
 </div>
 
-<searchbar (emmitSearch)="getSearch($event)" />
+<searchbar (emmitSearch)="getSearch($event)"/>
 
 <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
-    <div class="card custom-card mb-3 container" *ngIf="pokemon.details ">
+    <div class="card custom-card mb-3 container" *ngIf="pokemon.details">
         <div class="row no-gutters">
             <div class="col-md-4 d-flex justify-content-center align-items-center cursor-pointer"
                 (click)="navigateToDetails($event, pokemon.details.id)">
@@ -43,9 +43,9 @@
                             <div class="form-group d-flex justify-content-center align-items-center ml-4">
                                 <input formControlName="newComment" placeholder="Comentário..."
                                     class="form-control flex-grow-1 ml-4" maxlength="22">
-                                <button type="submit" class="btn ml-2">
-                                    <img src="../../../assets/icons/send-comment-icon.svg" alt="Enviar" />
-                                </button>
+                                    <button type="submit" class="btn ml-2" [disabled]="!commentForm.valid">
+                                        <img src="../../../assets/icons/send-comment-icon.svg" alt="Enviar" />
+                                    </button>
                             </div>
                         </form>
                     </div>
