@@ -3,18 +3,18 @@
 <main class="container">
     
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="responsive-h1">Principais Caracteristicas</h1>
-        <button type="button" class="btn btn-primary" data-toggle="button" [routerLink]="['/']" aria-pressed="false">
+        <h2 class="responsive-h1">Principais Caracteristicas</h2>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="button" [routerLink]="['/']" aria-pressed="false">
             Voltar
         </button>
     </div>
     <div class="d-flex mt-4 mb-2" *ngIf="pokemon && pokemon.length > 0">
         <figure class="figure">
-            <img [src]="pokemon[0].sprites.other.dream_world.front_default" class="figure-img img-fluid rounded"
+            <img [src]="pokemon[0].sprites.other.dream_world.front_default" class="figure-img img-fluid rounded scaleUp-animation"
                 [alt]="pokemon[0].name">
         </figure>
         <div class="d-flex flex-column ml-3">
-            <h2 class="h1 ml-4 mt-4 responsive-h2">{{ pokemon[0].name }}</h2>
+            <h2 class="h2 ml-4 mt-4 responsive-h2">{{ pokemon[0].name }}</h2>
                 <p class="figure-caption ml-4 responsive-p">{{pokemon[0].types[0].type.name}}</p>
                 <p class="h4 ml-4 mt-2 responsive-p">Este Pokémon possui habilidades impressionantes <br> e uma base de experiência de
                 <span class="text-primary">{{pokemon[0].base_experience}}</span> pontos.

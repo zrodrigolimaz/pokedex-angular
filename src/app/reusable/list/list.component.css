@@ -122,3 +122,14 @@ background-color: #C03028;
   font-weight: 600;
 }
 
+.scaleUp-animation {
+  opacity: 0;
+  transform: scale(0.89);
+  animation: scaleUp 1s forwards;
+}
+
+@keyframes scaleUp {
+  to {
+    opacity: 1;
+  }
+}

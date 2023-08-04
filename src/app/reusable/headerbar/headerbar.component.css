@@ -1,12 +1,15 @@
-#pokeball {
-    margin-left: 145px;
-    margin-top: 15px;
-    margin-right: 34px;
+.container-logo-softplan {
+    position: relative;
+  }
+  
+  #pokeball {
+    margin-top: 5px;
+    margin-left: 127px;
     position: absolute;
-    width: 37px;
-    height: 37px;
     animation: pokeball-animation 3s infinite;
-}
+  }
+  
+
 
 @keyframes pokeball-animation {
     0%   { top: 0; left: 0; transform: rotate(0deg); }
@@ -15,7 +18,7 @@
 }
 
 .navbar-header {
-    margin-right: 32px;
-    display: flex;
-    justify-content: space-between;
+  margin-right: 32px;
+  display: flex;
+  justify-content: space-between;
 }

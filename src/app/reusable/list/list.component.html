@@ -5,11 +5,11 @@
 <searchbar (emmitSearch)="getSearch($event)" />
 
 <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
-    <div class="card custom-card mb-3" *ngIf="pokemon.details ">
+    <div class="card custom-card mb-3 container" *ngIf="pokemon.details ">
         <div class="row no-gutters">
             <div class="col-md-4 d-flex justify-content-center align-items-center cursor-pointer"
                 (click)="navigateToDetails($event, pokemon.details.id)">
-                <img [src]="pokemon.details?.sprites?.other?.dream_world?.front_default" class="card-img-top" [alt]="pokemon.name">
+                <img [src]="pokemon.details?.sprites?.other?.dream_world?.front_default" class="card-img-top scaleUp-animation" [alt]="pokemon.name">
             </div>
             <div class="col-md-8 position-relative d-flex">
                 <div class=" flex-grow-1 ml-2">
