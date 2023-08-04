@@ -1,0 +1,62 @@
+<div *ngIf="apiError">
+    <p>Oops! Parece que estamos enfrentando um erro na API: {{ errorMessage }} Volte mais tarde!</p>
+</div>
+
+<searchbar (emmitSearch)="getSearch($event)" />
+
+<ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
+    <div class="card custom-card mb-3 container" *ngIf="pokemon.details ">
+        <div class="row no-gutters">
+            <div class="col-md-4 d-flex justify-content-center align-items-center cursor-pointer"
+                (click)="navigateToDetails($event, pokemon.details.id)">
+                <img [src]="pokemon.details?.sprites?.other?.dream_world?.front_default" class="card-img-top scaleUp-animation" [alt]="pokemon.name">
+            </div>
+            <div class="col-md-8 position-relative d-flex">
+                <div class=" flex-grow-1 ml-2">
+                    <h4 class="card-title mt-3 cursor-pointer" (click)="navigateToDetails($event, pokemon.details.id)">
+                        {{ pokemon.name }}</h4>
+                    <div class="card-text d-flex flex-wrap mt-2 mb-4">
+                        <p *ngFor="let type of pokemon.details?.types" class="mr-2 mb-2">
+                            <span class="type-tag" [class.poison]="type.type.name === 'poison'"
+                                [class.fire]="type.type.name === 'fire'" [class.fairy]="type.type.name === 'fairy'"
+                                [class.ground]="type.type.name === 'ground'"
+                                [class.electric]="type.type.name === 'electric'"
+                                [class.normal]="type.type.name === 'normal'"
+                                [class.flying]="type.type.name === 'flying'" [class.grass]="type.type.name === 'grass'"
+                                [class.bug]="type.type.name === 'bug'" [class.water]="type.type.name === 'water'"
+                                [class.fighting]="type.type.name === 'fighting'">
+                                <small>{{ type.type.name }}</small>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="comments-container">
+                        <div class="card mb-2 comment-card"
+                            *ngFor="let comment of pokemon.comments; let commentIndex = index">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="custom-h5">{{comment}}</h6>
+                                <button class="btn btn-sm mr-4"
+                                    (click)="deleteComment(pokemon, commentIndex); $event.stopPropagation()">Excluir</button>
+                            </div>
+                        </div>
+                        <form class="custom-form" [formGroup]="commentForm" (ngSubmit)="addComment(pokemon)"
+                            (click)="$event.stopPropagation()">
+                            <div class="form-group d-flex justify-content-center align-items-center ml-4">
+                                <input formControlName="newComment" placeholder="Comentário..."
+                                    class="form-control flex-grow-1 ml-4" maxlength="22">
+                                <button type="submit" class="btn ml-2">
+                                    <img src="../../../assets/icons/send-comment-icon.svg" alt="Enviar" />
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <img *ngIf="!favoritesService.isFavorite(pokemon)" src="../../../assets/icons/favorite-pokemon-icon.svg"
+                    (click)="favoritesService.addFavorite(pokemon); $event.stopPropagation()"
+                    class="favorite-icon top-0 end-0 mr-3 mt-3" />
+                <img *ngIf="favoritesService.isFavorite(pokemon)" src="../../../assets/icons/favorited-pokemon-icon.svg"
+                    (click)="favoritesService.removeFavorite(pokemon); $event.stopPropagation()"
+                    class="favorite-icon top-0 end-0 mr-3 mt-3" />
+            </div>
+        </div>
+    </div>
+</ng-template>

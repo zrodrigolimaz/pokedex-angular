@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+/*global styles*/
+
+body {
+    background-color: #F8F8F8;
+}
+
+main {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+input {
+    width: 90%;
+    background: none;
+    border: none;
+    height: 50px;
+    flex-shrink: 0;
+    outline: none;
+}
