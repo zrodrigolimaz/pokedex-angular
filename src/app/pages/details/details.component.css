@@ -1,5 +1,47 @@
 .custom-details {
-    border-radius: 10px;
-    border: 1px solid rgba(218, 218, 218, 0.19);
-    background: #F2F2F2;
-  }
+  border-radius: 10px;
+  border: 1px solid rgba(218, 218, 218, 0.19);
+  background: #F2F2F2;
+}
+
+@media (max-width: 576px) {
+.responsive-h1 {
+    font-size: 2.5rem;
+}
+.responsive-h2 {
+    font-size: 1.2rem;
+}
+.responsive-p {
+    font-size: 0.8rem;
+}
+}
+
+@media (min-width: 577px) {
+.responsive-h1 {
+    font-size: 3.5rem;
+}
+.responsive-h2 {
+    font-size: 2.5rem;
+}
+.responsive-p {
+    font-size: 1rem;
+}
+}
+
+@media (min-width: 768px) {
+.responsive-h1 {
+    font-size: 4.5rem;
+}
+.responsive-h2 {
+    font-size: 3.5rem;
+}
+.responsive-p {
+    font-size: 1.3rem;
+}
+}
+
+@media (min-width: 992px) {
+.responsive-h1 {
+    font-size: 6rem; 
+}
+}
