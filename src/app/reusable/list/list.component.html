@@ -44,16 +44,16 @@
                                 <input formControlName="newComment" placeholder="Comentário..."
                                     class="form-control flex-grow-1 ml-4" maxlength="22">
                                 <button type="submit" class="btn ml-2">
-                                    <img src="../../../assets/button-send-comment.svg" alt="Enviar" />
+                                    <img src="../../../assets/icons/send-comment-icon.svg" alt="Enviar" />
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <img *ngIf="!favoritesService.isFavorite(pokemon)" src="../../../assets/favorite-icon.svg"
+                <img *ngIf="!favoritesService.isFavorite(pokemon)" src="../../../assets/icons/favorite-pokemon-icon.svg"
                     (click)="favoritesService.addFavorite(pokemon); $event.stopPropagation()"
                     class="favorite-icon top-0 end-0 mr-3 mt-3" />
-                <img *ngIf="favoritesService.isFavorite(pokemon)" src="../../../assets/favorited-icon.svg"
+                <img *ngIf="favoritesService.isFavorite(pokemon)" src="../../../assets/icons/favorited-pokemon-icon.svg"
                     (click)="favoritesService.removeFavorite(pokemon); $event.stopPropagation()"
                     class="favorite-icon top-0 end-0 mr-3 mt-3" />
             </div>
