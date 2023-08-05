@@ -89,7 +89,7 @@ Execute `ng test` para realizar os testes unitários através do [Karma](https:/
 
 Execute `ng e2e` para realizar os testes de ponta a ponta através de uma plataforma de sua escolha. Para utilizar este comando, você precisa adicionar um pacote que implemente capacidades de teste de ponta a ponta.
 
-## 🤠 Screenshot ##
+## 🤠 Screenshot's ##
 <div align="center">
-  <img src='./screenshot.png' style='border-radius: .4rem; width:600px; margin-right: 5px;' />
+  <img src='./screenshot.png' style='border-radius: .4rem; margin-right: 5px;' />
 </div>
