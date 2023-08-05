@@ -1,6 +1,6 @@
 <h1 align="center">Pokedex - Angular</h1>
 <div align="center">
-  <img src='./screenshot2.png' style='border-radius: .4rem;  margin-left: 5px;' />
+  <img src='./screenshot.png' style='border-radius: .4rem;  margin-left: 5px;' />
 </div>
 <div align="center" id="top"> 
   <a href="https://pokedex.rodrigolima.tech">pokedex.rodrigolima.tech</a>
@@ -91,5 +91,6 @@ Execute `ng e2e` para realizar os testes de ponta a ponta através de uma plataf
 
 ## 🤠 Screenshot's ##
 <div align="center">
-  <img src='./screenshot.png' style='border-radius: .4rem; margin-right: 5px;' />
+  <img src='./screenshot2.png' style='border-radius: .4rem; margin-right: 5px;' />
+  <img src='./screenshot3.png' style='border-radius: .4rem; margin-right: 5px;' />
 </div>
