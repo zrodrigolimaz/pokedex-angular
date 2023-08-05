@@ -62,7 +62,7 @@ Antes de começar :checkered_flag:, você precisa ter o [Git](https://git-scm.co
 $ git clone https://github.com/zrodrigolimaz/pokedex-angular
 
 # Entre na pasta
-$ cd pokedex
+$ cd pokedex-angular
 
 # Instale as dependências
 $ npm install
