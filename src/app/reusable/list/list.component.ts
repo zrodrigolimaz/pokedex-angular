@@ -23,12 +23,15 @@ export class ListComponent implements OnInit, OnDestroy {
 		private pokeapiService: PokeapiService,
 		public favoritesService: FavoritesService, // tornando público para usar no template
 		private router: Router,  // injetar o Router aqui
-		private fb: FormBuilder
+		private fb: FormBuilder,
+		private formBuilder: FormBuilder
 	) {
 		this.commentForm = this.fb.group({
 			newComment: ['']
 		});
 	}
+
+	commentForms: Map<number, FormGroup> = new Map<number, FormGroup>();
 
 	ngOnInit(): void {
 		this.commentForm = new FormGroup({
@@ -68,15 +71,17 @@ export class ListComponent implements OnInit, OnDestroy {
 	}
 
 	addComment(pokemon: any) {
-		if (this.commentForm.valid) {
-			let comment = this.commentForm.value.newComment;
+		const commentForm = this.getCommentForm(pokemon.details.id);
+		if (commentForm.valid) {
+			let comment = commentForm.value.newComment;
 			let storedComments = JSON.parse(localStorage.getItem(pokemon.name) || '[]');
 			storedComments.push(comment);
 			localStorage.setItem(pokemon.name, JSON.stringify(storedComments));
 			pokemon.comments = storedComments;
-			this.commentForm.reset();
+			commentForm.reset();
 		}
 	}
+
 
 	deleteComment(pokemon: any, commentIndex: number) {
 		let storedComments = JSON.parse(localStorage.getItem(pokemon.name) || '[]');
@@ -85,4 +90,14 @@ export class ListComponent implements OnInit, OnDestroy {
 		pokemon.comments = storedComments;
 	}
 
+	getCommentForm(id: number): FormGroup {
+		let commentForm = this.commentForms.get(id);
+		if (!commentForm) {
+			commentForm = this.formBuilder.group({
+				newComment: ['', Validators.required]
+			});
+			this.commentForms.set(id, commentForm);
+		}
+		return commentForm;
+	}
 }
