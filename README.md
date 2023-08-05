@@ -1,3 +1,34 @@
+<<<<<<< HEAD
+<h1 align="center">Pokedex</h1>
+<img src='./screenshot.png' style='border-radius: .4rem; width:800px; margin: 0 15rem' />
+
+<p align="center">
+  <img alt="Principal linguagem do projeto" src="https://img.shields.io/github/languages/top/zrodrigolimaz/pokedex-angular?color=56BEB8">
+
+  <img alt="Quantidade de linguagens utilizadas" src="https://img.shields.io/github/languages/count/zrodrigolimaz/pokedex-angular?color=56BEB8">
+
+  <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/zrodrigolimaz/pokedex-angular?color=56BEB8">
+
+</p>
+
+<div align="center" id="top"> 
+  <a href="https://pokedex.rodrigolima.tech">Demo</a>
+</div>
+
+<hr>
+
+
+<br>
+
+## :dart: Sobre ##
+
+Essa aplicação é um frontend de uma pokedex pokemon construída em Angular, permitindo aos usuários explorar, filtrar, favoritar e comentar sobre diferentes Pokémons de uma maneira interativa e moderna.
+
+Com a integração da [PokeAPI](https://pokeapi.co/docsv2), a aplicação proporciona uma experiência de navegação agradável e envolvente para os fãs de Pokémon.
+
+## :sparkles: Funcionalidades ##
+
+=======
 
 <h1 align="center">Pokedex</h1>
 <img src='./screenshot.png' style='border-radius: .4rem; width:800px; margin: 0 15rem' />
@@ -28,6 +59,7 @@ Com a integração da [PokeAPI](https://pokeapi.co/docsv2), a aplicação propor
 
 ## :sparkles: Funcionalidades ##
 
+>>>>>>> main
 - ✔️ Listar Pokémons: Explore a variedade de Pokémons disponíveis na PokeAPI.
 - ✔️ Filtrar Pokémons: Localize os Pokémons que você deseja visualizar.
 - ✔️ Favoritar Pokémons: Guarde os seus Pokémons favoritos para fácil acesso. (LocalStorage do browser)
@@ -86,4 +118,8 @@ Execute `ng test` para realizar os testes unitários através do [Karma](https:/
 
 ## Executando testes de ponta a ponta
 
+<<<<<<< HEAD
 Execute `ng e2e` para realizar os testes de ponta a ponta através de uma plataforma de sua escolha. Para utilizar este comando, você precisa adicionar um pacote que implemente capacidades de teste de ponta a ponta.
+=======
+Execute `ng e2e` para realizar os testes de ponta a ponta através de uma plataforma de sua escolha. Para utilizar este comando, você precisa adicionar um pacote que implemente capacidades de teste de ponta a ponta.
+>>>>>>> main
