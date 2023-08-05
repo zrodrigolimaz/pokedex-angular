@@ -2,7 +2,6 @@
 <h1 align="center">Pokedex - Angular</h1>
 
 <div align="center">
-  <img src='./screenshot.png' style='border-radius: .4rem; width:300px; margin-right: 5px;' />
   <img src='./screenshot2.png' style='border-radius: .4rem; width:300px; margin-left: 5px;' />
 </div>
 <div align="center" id="top"> 
@@ -91,3 +90,8 @@ Execute `ng test` para realizar os testes unitários através do [Karma](https:/
 ## Executando testes de ponta a ponta
 
 Execute `ng e2e` para realizar os testes de ponta a ponta através de uma plataforma de sua escolha. Para utilizar este comando, você precisa adicionar um pacote que implemente capacidades de teste de ponta a ponta.
+
+## 🤠 Screenshot ##
+<div align="center">
+  <img src='./screenshot.png' style='border-radius: .4rem; width:300px; margin-right: 5px;' />
+</div>
