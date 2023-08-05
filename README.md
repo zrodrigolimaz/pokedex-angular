@@ -1,10 +1,10 @@
 
 <h1 align="center">Pokedex - Angular</h1>
 
-<p float="left">
-  <img src='./screenshot.png' style='border-radius: .4rem; width:507px; margin-right: 10px;' />
-  <img src='./screenshot2.png' style='border-radius: .4rem; width:483px; margin-left: 10px;' />
-</p>
+<div align="center">
+  <img src='./screenshot.png' style='border-radius: .4rem; width:300px; margin-right: 5px;' />
+  <img src='./screenshot2.png' style='border-radius: .4rem; width:300px; margin-left: 5px;' />
+</div>
 <div align="center" id="top"> 
   <a href="https://pokedex.rodrigolima.tech">pokedex.rodrigolima.tech</a>
 </div>
