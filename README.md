@@ -1,12 +1,25 @@
-<h1 align="center">Pokedex - Angular</h1>
-<div align="center">
-  <img src='./screenshot.png' style='border-radius: .4rem;  margin-left: 5px;' />
-</div>
-<div align="center" id="top"> 
-  <a href="https://pokedex.rodrigolima.tech">pokedex.rodrigolima.tech</a>
-</div>
-<hr>
+## :sparkles: Features
 
+ Design moderno + Animações suaves
+ Bootstrap (folha base) + Custom CSS
+ Tablet & Web 
+ Well organized documentation 
+ Versão do Angular 16.1.8 
+
+- ✔️ Listar Pokémons: Explore a variedade de Pokémons disponíveis na PokeAPI.
+- ✔️ Filtrar Pokémons: Localize os Pokémons que você deseja visualizar.
+- ✔️ Favoritar Pokémons: Guarde os seus Pokémons favoritos para fácil acesso.
+- ✔️ Comentários sobre Pokémons: Partilhe as suas opiniões e comentários sobre os seus Pokémons favoritos. 
+- ✔️ Visualizar detalhes do Pokémon: Clique em qualquer Pokémon para visualizar mais detalhes em uma outra rota.
+
+
+
+<!-- <div align="center">
+  <img src='./screenshot.png' style='border-radius: .4rem;  margin-left: 5px;' />
+</div> -->
+
+<hr>
+<h1 align="center">Pokedex - Angular</h1>
 <p align="center">
   <img alt="Principal linguagem do projeto" src="https://img.shields.io/github/languages/top/zrodrigolimaz/pokedex-angular?color=56BEB8">
 
@@ -23,14 +36,9 @@
 Essa aplicação é uma pokedex construída em Angular, permitindo aos usuários explorar, filtrar, favoritar e comentar sobre diferentes Pokémons de uma maneira interativa e moderna.
 
 Com a integração da [PokeAPI](https://pokeapi.co/docsv2), a aplicação proporciona uma experiência de navegação agradável e envolvente para os fãs de Pokémon.
-
-## :sparkles: Funcionalidades ##
-
-- ✔️ Listar Pokémons: Explore a variedade de Pokémons disponíveis na PokeAPI.
-- ✔️ Filtrar Pokémons: Localize os Pokémons que você deseja visualizar.
-- ✔️ Favoritar Pokémons: Guarde os seus Pokémons favoritos para fácil acesso. (LocalStorage do browser)
-- ✔️ Comentários sobre Pokémons: Partilhe as suas opiniões e comentários sobre os seus Pokémons favoritos. (LocalStorage do browser)
-- ✔️ Visualizar detalhes do Pokémon: Clique em qualquer Pokémon para visualizar mais detalhes em uma outra rota.
+<div align="left" id="top"> 
+  <a href="https://pokedex.rodrigolima.tech">pokedex.rodrigolima.tech</a>
+</div>
 
 ## :rocket: Tecnologias ##
 
@@ -94,3 +102,6 @@ Execute `ng e2e` para realizar os testes de ponta a ponta através de uma plataf
   <img src='./screenshot2.png' style='border-radius: .4rem; margin-right: 5px;' />
   <img src='./screenshot3.png' style='border-radius: .4rem; margin-right: 5px;' />
 </div>
+
+## Status Deploy 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/19d0e7d7-f877-46e1-ac34-acf48d10b4d9/deploy-status)](https://app.netlify.com/sites/elegant-marzipan-ab2e8e/deploys)
