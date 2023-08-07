@@ -4,27 +4,19 @@
   background: #F2F2F2;
 }
 
+.custom-figure {
+    margin: 0 0 0rem
+}
+
 @media (max-width: 576px) {
 .responsive-h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
 }
 .responsive-h2 {
     font-size: 1.2rem;
 }
 .responsive-p {
-    font-size: 0.8rem;
-}
-}
-
-@media (min-width: 577px) {
-.responsive-h1 {
-    font-size: 3.5rem;
-}
-.responsive-h2 {
-    font-size: 2.5rem;
-}
-.responsive-p {
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 }
 
