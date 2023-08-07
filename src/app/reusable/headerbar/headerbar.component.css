@@ -1,19 +1,50 @@
 .container-logo-softplan {
-    position: relative;
-  }
-  
-  #pokeball {
-    margin-top: 5px;
-    margin-left: 127px;
-    position: absolute;
-    animation: pokeball-animation 3s infinite;
-  }
-  
-
-
-@keyframes pokeball-animation {
-    0%   { top: 0; left: 0; transform: rotate(0deg); }
-    50%  { top: 20px; left: 20px; transform: rotate(180deg); }
-    100% { top: 0; left: 0; transform: rotate(360deg); }
+  position: relative;
 }
 
+#pokeball {
+  margin-top: 5px;
+  margin-left: 127px;
+  position: absolute;
+  animation: pokeball-animation 3s infinite;
+}
+
+@keyframes pokeball-animation {
+  0% {
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    top: 20px;
+    left: 20px;
+    transform: rotate(180deg);
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 576px) {
+
+  .container-logo-softplan {
+    display: none !important;
+  }
+
+}
+
+@media (max-width: 774px) {
+
+  .container-logo-softplan {
+    display: none !important;
+  }
+
+  .navbar-light .navbar-toggler {
+    border-color: transparent !important;
+  }
+
+}

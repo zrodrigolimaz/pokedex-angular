@@ -15,7 +15,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
   public pokemon: any;
   private subscription: Subscription = new Subscription();
-;
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
